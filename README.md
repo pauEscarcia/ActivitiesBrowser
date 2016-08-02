@@ -1,4 +1,4 @@
-# Activities-browser CMS 
+# Activities-browser Django
 TrixDiscover
 
 ![Image of TrixDiscover](https://github.com/pauEscarcia/Activities-browser/blob/master/media/TrixDiscover.png)
