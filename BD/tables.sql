@@ -4,7 +4,11 @@ CREATE TABLE trixdiscover."Categoria"
   "idCategoria" bigserial NOT NULL,
   nombre text,
   descripcion text,
-  CONSTRAINT "Pk_Categoria" PRIMARY KEY ("idCategoria")
+  "idClasificacion" bigint,
+  CONSTRAINT "Pk_Categoria" PRIMARY KEY ("idCategoria"),
+  CONSTRAINT "Fk_Categoria" FOREIGN KEY ("idClasificacion")
+      REFERENCES trixdiscover."Clasificacion" ("idClasificacion") MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
 )
 WITH (
   OIDS=FALSE
@@ -12,6 +16,12 @@ WITH (
 ALTER TABLE trixdiscover."Categoria"
   OWNER TO "trixDiscover";
 
+CREATE INDEX "fki_Fk_Categoria"
+  ON trixdiscover."Categoria"
+  USING btree
+  ("idClasificacion");
+
+--Create table Actividad
 CREATE TABLE trixdiscover."Actividad"
 (
   "idActividad" bigserial NOT NULL,
