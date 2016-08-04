@@ -102,5 +102,19 @@ WITH (
 ALTER TABLE trixdiscover."Prestador"
   OWNER TO postgres;
 
+--Create table Clasificacion 
+CREATE TABLE trixdiscover."Clasificacion"
+(
+  "idClasificacion" bigserial NOT NULL,
+  nombre text,
+  descripcion text,
+  CONSTRAINT "Pk_clasificacion" PRIMARY KEY ("idClasificacion")
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE trixdiscover."Clasificacion"
+  OWNER TO "trixDiscover";
+
 
 
