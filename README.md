@@ -53,4 +53,8 @@ DATABASES = {
 * `python manage.py migrate`
 * `python manage.py runserver`
 
+##Create a model in Django
+![Model](https://github.com/pauEscarcia/ActivitiesBrowser/blob/master/images/bd.png)
+
+
 
