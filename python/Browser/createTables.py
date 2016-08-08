@@ -13,15 +13,17 @@ try:
 	#Create a client cursor to execute commands
 	 
 	cursor = db_con.cursor()
-	cursor.execute("CREATE TABLE clasificacion (idClasificacion BIGSERIAL NOT NULL PRIMARY KEY, nombre TEXT, descripcion TEXT);")
+	#cursor.execute("CREATE TABLE clasificacion (idClasificacion BIGSERIAL NOT NULL PRIMARY KEY, nombre TEXT, descripcion TEXT);")
+	cursor.execute("CREATE TABLE categoria (idCategoria BIGSERIAL NOT NULL PRIMARY KEY, nombre TEXT, descripcion TEXT, idClasificacion BIGINT REFERENCES clasificacion(idClasificacion))")
 	 
 	#The variables placeholder must always be a %s, psycop2 will automatically convert the values to SQL literal
 	 
-	cursor.execute("INSERT INTO clasificacion (nombre,descripcion) VALUES (%s, %s)",("Sports", "lala"))
+	#cursor.execute("INSERT INTO clasificacion (nombre,descripcion) VALUES (%s, %s)",("Sports", "lala"))
+	cursor.execute("INSERT INTO categoria (nombre,descripcion,idClasificacion) VALUES (%s, %s, %s)",("hola","uno",1))
 	 
 	db_con.commit()
 	 
-	cursor.execute("SELECT * FROM clasificacion")
+	cursor.execute("SELECT * FROM categoria")
 
 	print(cursor.fetchone())
  
