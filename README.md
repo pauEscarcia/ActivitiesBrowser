@@ -54,6 +54,7 @@ DATABASES = {
 * `python manage.py runserver`
 
 ##Create a model in Django
+In the following image modeling database to trixdiscovercms where relationships between tables ( As we know will create modeling within an application django ) is shown . It's just to learn how to do it.
 ![Model](https://github.com/pauEscarcia/ActivitiesBrowser/blob/master/images/bd.png)
 
 
